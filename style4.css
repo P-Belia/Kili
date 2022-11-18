@@ -514,7 +514,7 @@
               #basdepage a {
                 display: flex;
                 justify-content: center;
-                margin-bottom: 25%;
+                margin-top: 0;
                 font-size: 2em;
               }
 
