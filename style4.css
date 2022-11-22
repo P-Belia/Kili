@@ -388,18 +388,14 @@
 
               #contact p {
                 margin: 5px;
+                font-weight: bold;
               }
 
-              .fa-solid {
-                font-size: 25px;
-                margin-top: 20px;
-                margin-bottom: 5px;
-              }
-
-
-  
-              #titreg {
-                grid-area: 94/ 2 / 96/ 12;
+              #contact img {
+                height: 6%;
+                width: 8%;
+                margin-top: 4%;
+                margin-bottom: 1%;
               }
   
               #gallery {             
@@ -554,13 +550,74 @@
 
                 #imgevenement {
                   height: 70vh;
-                  width: 40vw;
+                  width: 30vw;
+                }
+                #imgvuesass {    
+                  height: 40vh;
+                  width: 60vw;
+                  margin-left: 5vw;
+                  border-radius: 50%;
+                  margin-top: 5px;                
+                }
+    
+                #imgvuesass:hover{
+                  transform: none;
+                  transition: none;
+                  border-radius: none;
+                  width: 60vw;
+                }
+
+                #coop {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100vw;
+                text-align: center;
+                justify-content: center;
+
+                }
+
+                #imgmaires{                             
+                  height: 40vh;
+                  width: 60vw;
+                  border-radius: 50%;
+                  margin-top: 5px;
+                  margin-left: 0vw;
+                }
+    
+                #imgmaires:hover{
+                  transform: none;
+                  border-radius: 50%;
+                  transition: none;
+                  border-radius: none;
+                  width: 60vw;
+                }
+                
+                #perspective {
+                width: 100vw;
+                text-align: center;
+                justify-content: center;
+                }
+
+                #imgacteur {    
+                  height: 40vh;
+                  width: 60vw;
+                  border-radius: 50%;
+                  margin-top: 5px;
+                  margin-left: 0;
+                }      
+                
+                #imgacteur:hover{
+                  transform: none;
+                  border-radius: 50%;
+                  transition: none;
+                  border-radius: none;
+                  width: 60vw;
                 }
 
                 #gallery {            
                   display: grid;  
                 grid-template-columns: repeat(9,149px);      
-                grid-template-rows: repeat(19, 150px);
+                grid-template-rows: repeat(18, 150px);
                 margin-left: 0;
                 margin-right: 0;
                 gap: 20px;
@@ -625,15 +682,16 @@
               
               #imgevenement {
                 height: 70vh;
-                width: 40vw;
+                width: 30vw;
               }
 
               .txt {
                 width: 90vw;
               }
+              
               #imgvuesass {    
-                height: 320px;
-                width: 70vw;
+                height: 40vh;
+                width: 60vw;
                 margin-left: 5vw;
                 border-radius: 50%;
                 margin-top: 5px;                
@@ -643,30 +701,24 @@
                 transform: none;
                 transition: none;
                 border-radius: none;
-                width: 70vw;            
-              }
-              #coop {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                width: 90vw;
-                text-align: center;       
+                width: 60vw;
               }
 
-              #perspective {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                width: 90vw;
-                      
+              #coop {
+              display: flex;
+              flex-wrap: wrap;
+              width: 100vw;
+              text-align: center;
+              justify-content: center;
+
               }
 
               #imgmaires{                             
-                height: 320px;
-                width: 70vw;
+                height: 40vh;
+                width: 60vw;
                 border-radius: 50%;
                 margin-top: 5px;
-                margin-left: 5vw;
+                margin-left: 0vw;
               }
   
               #imgmaires:hover{
@@ -674,15 +726,21 @@
                 border-radius: 50%;
                 transition: none;
                 border-radius: none;
-                width: 70vw;
-              }                
+                width: 60vw;
+              }
+              
+              #perspective {
+              width: 100vw;
+              text-align: center;
+              justify-content: center;
+              }
 
-              #imgacteur {      
-                height: 320px;
-                width: 70vw;
+              #imgacteur {    
+                height: 40vh;
+                width: 60vw;
                 border-radius: 50%;
                 margin-top: 5px;
-                margin-left: 5vw;
+                margin-left: 0;
               }      
               
               #imgacteur:hover{
@@ -690,7 +748,15 @@
                 border-radius: 50%;
                 transition: none;
                 border-radius: none;
-                width: 70vw;
+                width: 60vw;
+              }
+
+              #sactivite {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
               }
 
               /* Photo cooperation*/
@@ -901,7 +967,7 @@
                   }                
   
                   #imgvuesass {    
-                    height: 320px;
+                    height: 40vh;
                     width: 70vw;
                     margin-left: 5vw;
                     border-radius: 50%;
@@ -923,7 +989,7 @@
                   }
   
                   #imgmaires{                             
-                    height: 320px;
+                    height: 40vh;
                     width: 70vw;
                     border-radius: 50%;
                     margin-top: 5px;
@@ -948,7 +1014,7 @@
                   }
   
                   #imgacteur {      
-                    height: 320px;
+                    height: 40vh;
                     width: 70vw;
                     border-radius: 50%;
                     margin-top: 5px;
@@ -986,7 +1052,7 @@
                   #gallery {             
                     display: grid;                   
                     grid-template-columns: repeat(10,10vw);      
-                    grid-template-rows: repeat(50, 10vh);                  
+                    grid-template-rows: repeat(49, 10vh);                  
                     gap: 5px; 
                     margin-left: 0px;
                     margin-right: 0px;
@@ -1067,12 +1133,7 @@
 
               }
 /*---------------------------------------------------------------------------------------------------------------------------*/
-              @media screen and (max-width: 744px) {
-
-                #imgevenement {
-                  height: 60vh;
-                  width: 40vw;
-                }
+              @media screen and (max-width: 744px) {              
 
               header{
                 height: 105px;
@@ -1091,18 +1152,17 @@
               
               .btn:hover {
                 border: 1.5px solid white;
-              } 
+              }
 
-               #imgevenement {
+              #imgevenement {
                 height: 70vh;
-                width: 90vw;
+                width: 60vw;
               }
 
               #imgevenement:hover {
-                  transform: none;
-                  transition: none;
-                }
-              
+                transform: none;
+                transition: none;
+              }
 
               }
 
@@ -1292,7 +1352,7 @@
 
                 #imgvuesass {    
                   height: 30vh;
-                  width: 80vw;
+                  width: 60vw;
                   margin-left: 5vw;
                   border-radius: 50%;
                   margin-top: 5px;                
@@ -1302,7 +1362,7 @@
                   transform: none;
                   transition: none;
                   border-radius: none;
-                  width: 80vw;
+                  width: 60vw;
                 }
 
                 #coop {
@@ -1310,12 +1370,13 @@
                 flex-wrap: wrap;
                 width: 100vw;
                 text-align: center;
-                justify-content: center;        
+                justify-content: center;
+
                 }
 
                 #imgmaires{                             
                   height: 30vh;
-                  width: 80vw;
+                  width: 60vw;
                   border-radius: 50%;
                   margin-top: 5px;
                   margin-left: 0vw;
@@ -1326,7 +1387,7 @@
                   border-radius: 50%;
                   transition: none;
                   border-radius: none;
-                  width: 80vw;
+                  width: 60vw;
                 }
                 
                 #perspective {
@@ -1337,7 +1398,7 @@
 
                 #imgacteur {    
                   height: 30vh;
-                  width: 80vw;
+                  width: 60vw;
                   border-radius: 50%;
                   margin-top: 5px;
                   margin-left: 0;
@@ -1348,7 +1409,7 @@
                   border-radius: 50%;
                   transition: none;
                   border-radius: none;
-                  width: 70vw;
+                  width: 60vw;
                 }
 
                 #sactivite {
@@ -1378,7 +1439,7 @@
                 #gallery {             
                   display: grid;  
                   grid-template-columns: repeat(10,10vw);      
-                  grid-template-rows: repeat(50, 10vh);                  
+                  grid-template-rows: repeat(49, 10vh);                  
                   gap: 5px; 
                   margin-left: 0px;
                   margin-right: 0px;
