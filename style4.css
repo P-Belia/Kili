@@ -1168,6 +1168,11 @@
                 transition: none;
               }
 
+              #contact img {
+                height: 6%;
+                width: 11%;
+              }
+
               }
 
  /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -1440,6 +1445,12 @@
                   margin: 0 0;
                   width: 100%;
                 }
+
+                #contact img {
+                  height: 6%;
+                  width: 11%;
+                }
+
                 #gallery {             
                   display: grid;  
                   grid-template-columns: repeat(10,10vw);      
