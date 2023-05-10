@@ -42,6 +42,13 @@
               body  h2 {
                 font-family: "GeneralSans-Medium", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
               }
+
+              .fade {
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+              }
+              
+                         
   
               span {
                 font-weight: bold;
@@ -149,7 +156,7 @@
                 width: 550px;                
                 filter: opacity(90%);
                 }
-              
+        
               #imgevenement:hover {
                 filter: opacity(100%);
                 transform: scale(1.17,1.17);
@@ -254,6 +261,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
+                position: relative;
               }
 
               .txt {
