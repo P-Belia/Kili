@@ -77,8 +77,7 @@
                 color: grey;
                 font-size: 19px;
                 min-width: 360px;
-                text-align: center;
-       
+                text-align: center;       
               }
               
               nav {
@@ -98,9 +97,9 @@
               }              
               
               
-              .btn {
+            .btn {
                 background-color: white;
-                text-decoration: none;
+                text-decoration: none;                    
                 padding: 10px;
                 border-radius: 20px;
                 color: #1e6f43ff;
@@ -108,6 +107,10 @@
                 font-weight: bold;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                background-image: linear-gradient(to right, #4caf50 0%, #4caf50 0%, transparent 0%, transparent 100%);
+                background-size: 0% 100%;
+                background-repeat: no-repeat;
+                transition: background-size 0.3s;
               }
               
               .btn:hover {
@@ -118,13 +121,16 @@
                 color: white;
                 border: 2px solid white;
                 font-weight: bold;
-              }             
+              }        
   
               .titre {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
-                align-items: center;  
-                width: 100%;                                
+                align-items: center;
+                margin: auto;
+                width: 96vw;
+                text-align: center;                            
               }
                            
               a {
@@ -135,40 +141,52 @@
                 display: contents;
               }
               
-                #containerimgevenement{
-                    display: flex;
-                    margin-left: auto;
-                    margin-right: auto;
-                    justify-content: center;
-                    top: 90px;
-                    width: 100vw;
-                }
-
-              #imgevenement {
-                display: flex;
-                height: 800px;
-                width: 550px;                
-                filter: opacity(90%);
-                }
-        
-              #imgevenement:hover {
-                filter: opacity(100%);
-                transform: scale(1.17,1.17);
-                transition: all 1s ease;
+              .txt {
+                width: 60%;
               }
+
+              .txt p  {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+              }
+              #containerimgevenement {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto; /* Center the container horizontally */
+            }
+
+            #imgevenement {
+              display: block; /* Ensure the image is treated as a block element */
+              height: 80vh;
+              width: auto; /* Maintain the aspect ratio */
+              filter: opacity(90%);
+              transition: all 1s ease; /* Smooth transition for hover effect */
+          }
+        
+          #imgevenement {
+            display: block; /* Ensure the image is treated as a block element */
+            max-height: 80vh; /* Adjust this value as needed */
+            max-width: 80vw; /* Adjust this value as needed */
+            filter: opacity(90%);
+            transition: all 1s ease; /* Smooth transition for hover effect */
+        }
+        
               
               p {
                 padding-right: 3px;
                 padding-left: 5px;
-                min-width: 350px;
+                min-width: auto;
               }
 
               #partieverte {
-                margin: 0 3%;
                 background-color: rgba(110, 247, 128, 0.199);
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
+                width: 96vw;
+                margin: 0 auto;
               }
               
               #qui {
@@ -250,23 +268,19 @@
               }
 
               #partiejaune {
-                background-color: rgba(231, 193, 78, 0.199);
-                margin: 0 3%;               
+                background-color: rgba(231, 193, 78, 0.199);             
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
                 position: relative;
-              }
-
-              .txt {
-                width: 60%;
-              }
+                width: 96vw; /* Assurez-vous que toutes les sections utilisent la même largeur */
+                margin: 0 auto;
+              }              
                            
               #sass {
                 display: flex;
                 flex-wrap: wrap;             
               }
-
 
               #imgvuesass {
                 display: flex;
@@ -348,77 +362,47 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                margin: 0 3%;
+                align-items: center;
+                width: 96vw; /* Assurez-vous que toutes les sections utilisent la même largeur */
+                margin: 0 auto;
               }
+
               
-              #action-acc {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                width: 50%;
-                min-width: 250px;
+              #action-acc, #action-venir {
+                margin: 10px;
+                flex: 1 1 45%; /* Grow, shrink, and set initial width to 45% */
+                box-sizing: border-box;
                 text-align: center;
-                }
-              
-              #action-venir {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            }
+            
+            #action-acc h2, #action-venir h2 {
                 text-align: center;
-                width: 50%;
-              }
-
-              #partierouge #action-venir h2 {
-                padding-left: 40px;
-                } 
-
-              #partiegrise {
-                background-color: rgba(230, 230, 230, 0.39);
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 0 3%;
-                width: 100%;
-              }
-
-              #contact {
-                text-align: center;
-                margin-right: auto;
-                margin-left: auto;
-                margin: 0; 
-              }
-
-              #contact p {
-                margin: 5px;
-                font-weight: bold;
-                margin-right: auto;
-                margin-left: auto;
-              }
-
-              #contact img {
-                margin-left: auto;
-                margin-right: auto;
-                height: 6%;
-                width: 6%;
-                margin-top: 4%;
-                margin-bottom: 1%;
-              }
+            }              
   
               #gallery {             
                 display: grid;  
-                grid-template-columns: repeat(9,149px);      
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));    
                 grid-template-rows: repeat(12, 150px);
                 grid-auto-rows: 150px;
-                margin-left: 174px;
-                margin-right: 174px;
-                gap: 20px;            
+                width: 92vw;
+                max-width: 96vw;
+                margin: 0 auto;
+                gap: 20px;
+                box-sizing: border-box;       
                 }
 
               #gallery > div {
                 display: flex;
                 justify-content: left;
-                align-items:flex-end;
+                align-items: flex-end;
                 text-align: left;
+                min-height: 150px;
+                border: 5px solid rgb(71, 70, 70);
+                box-shadow: 3px 3px 6px grey;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 0.2s ease;
               }
         
               #gallery .galleryitems {
@@ -441,10 +425,15 @@
                 font-weight: bold;
                 background-color: rgba(48, 47, 47, 0.275);
                 backdrop-filter: blur(2px);
-               }
-
-
-       
+                width: 100%; /* Ensure the paragraph takes full width of the parent */
+                box-sizing: border-box; /* Include padding and border in the element's total width and height */
+                padding: 5px; /* Add some padding for better readability */
+                overflow: hidden; /* Hide overflowing content */
+                text-overflow: ellipsis; /* Add ellipsis (...) to overflowing text */
+                white-space: nowrap; /* Prevent text from wrapping to the next line */
+                word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
+            }
+                  
               /* Photo cooperation*/
               #G1 {
                 grid-area: 1 / 1 / 3 / 4 ;
@@ -506,6 +495,92 @@
                 background-image: url(./images/Gallery/pont_bandeau_260.jpg)
               }
 
+              #partiegrise {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 98vw;
+              }
+
+              #contact {                
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100vw; 
+                text-align: center;
+                margin: 0 auto;
+              }
+
+              #contact p {
+                margin: 0px;
+                font-weight: bold;
+                margin: 0 auto;
+              }
+
+              #contact img {
+                margin-left: auto;
+                margin-right: auto;
+                height: 6%;
+                width: 6%;
+                margin-top: 4%;
+                margin-bottom: 1%;
+              }
+
+                
+                .form-block {
+                flex: 1;
+                min-width: 426px;
+                padding: 30px;
+                padding-left: 10%;
+                box-sizing: border-box;
+                }
+                
+                .contact-info {
+                flex: 1;
+                min-width: 426px;
+                padding: 30px;
+                margin: 0 auto;
+                box-shadow: 0 2px 6px #1b1a2a;
+                background-color: #1b1a2ade;
+                color: #ffffff;
+                box-sizing: border-box;
+                }
+                
+                .form-block h2,
+                .contact-info h2 {
+                margin-top: 0;
+                }
+                
+                .form-block input,
+                .form-block textarea {
+                width: 90%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #dddddd;
+                border-radius: 4px;
+                }
+                
+                .form-block button {
+                padding: 10px 20px;
+                background-color: #1b1a2a;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                }
+                
+                .error-message {
+                color: red;
+                margin-bottom: 10px;
+                }
+
+                input::placeholder,
+                textarea::placeholder {
+                  font-size: 18px; /* Adjust this value to change the placeholder text size */
+
+              }
+
               #basdepage {
                 display: flex;
                 flex-wrap: wrap;
@@ -514,6 +589,9 @@
                 margin-top: 50px;
                 margin-left: auto;
                 margin-right: auto;
+                cursor: pointer;
+                width: 96vw; /* Ensure it takes full width */
+
               }
 
               #basdepage {
@@ -522,11 +600,14 @@
                 margin-bottom: 1.7%;
               }
 
+
               #basdepage a {
                 display: flex;
                 justify-content: center;
                 margin-top: 0%;
                 font-size: 2em;
+                cursor: pointer;
+
               }
 
                 #basdepage a {
@@ -534,30 +615,17 @@
                 background-clip: text;
                 color: transparent;
               }
-
-
-
-
-              /* Media Quires*/
-              @media screen and (max-width: 1676px) {
-                #gallery {             
-                  margin-right: 0px;
-                  margin-left: 0px;
-                }
-
-                #imgevenement {
-                  height: 70vh;
-                  width: 40vw;
-                }
-            
-              }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-              @media screen and (max-width: 1500px) {
+              @media screen and (max-width: 1893px) {
 
-                #imgevenement {
-                  height: 70vh;
-                  width: 30vw;
+                #imgouinouin:hover {
+                  transform: scale(1.03,1.03);
+                  border-radius: 0;
+                  transition: all 0.5s ease;
+                  border-radius: 40%;
+                  width: 500px;             
                 }
+
                 #imgvuesass {    
                   height: 40vh;
                   width: 60vw;
@@ -620,14 +688,15 @@
                   width: 60vw;
                 }
 
-                #gallery {            
-                  display: grid;  
-                grid-template-columns: repeat(9,149px);      
+               #gallery {            
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));    
                 grid-template-rows: repeat(18, 150px);
-                margin-left: 0;
-                margin-right: 0;
                 gap: 20px;
+                margin: 0 auto;
+                width: auto;
                 }
+                
                 /* Photo cooperation*/
               #G1 {
                 grid-area: 1 / 2 / 3 / 6 ;
@@ -677,18 +746,13 @@
                 grid-area: 17 / 2 / 19 / 9 ;
               }
 
-              }
+              } 
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
             @media screen and (max-width: 1341px) {
 
               header {
                 border-bottom: 2px solid #1e6f43ff;               
-              }
-              
-              #imgevenement {
-                height: 70vh;
-                width: 30vw;
               }
 
               .txt {
@@ -713,7 +777,7 @@
               #coop {
               display: flex;
               flex-wrap: wrap;
-              width: 100vw;
+              width: 98vw;
               text-align: center;
               justify-content: center;
 
@@ -726,7 +790,7 @@
                 margin-top: 5px;
                 margin-left: 0vw;
               }
-  
+              
               #imgmaires:hover{
                 transform: none;
                 border-radius: 50%;
@@ -765,6 +829,10 @@
                 margin-right: auto;
               }
 
+              #partieverte, #partiejaune, #partierouge {
+                width: 98vw;
+              }              
+
               /* Photo cooperation*/
               #G1 {
                 grid-area: 1 / 1 / 3 / 5 ;
@@ -784,7 +852,7 @@
               /* Photo Baobab*/
               #G5 {
                 grid-area: 6 / 5 / 10 / 8 ;
-              } #G5 p { min-width: 0px;}
+              }
               /* Photo classe*/
               #G6 {
                 grid-area: 9 / 1 / 11 / 5 ;
@@ -816,7 +884,7 @@
 
             }
  /*---------------------------------------------------------------------------------------------------------*/             
-              @media screen and (max-width: 1081px) {
+              @media screen and (max-width: 1214px) {
                 body {               
                   font-size: 18px;                
                 }
@@ -894,24 +962,21 @@
                 .imgverte {
                   width: 60vw;
                 }
-  
-                #imgevenement {
-                  height: 65vh;
-                  width: 45vw;
-                }
-  
+
+
+
+
                 #imgevenement:hover {
                     transform: none;
                     transition: none;
                   }
   
                 #partieverte {
-                    margin: 0 0;
                     background-color: rgba(110, 247, 128, 0.199);
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    width: 100vw;
+                    width: 95vw;
                   }
   
                   #qui {
@@ -925,11 +990,12 @@
                     border: 2px solid white;
                     transition: none;
                     margin-left: 5vw;
+                    transition: all 0.5s ease;
                    }
     
                 #imgq1:hover {
                    max-height: none;
-                   width: 60vw;
+                   width: 50vw;
                    border-radius: 50%;
                    border: none; 
                   }
@@ -939,12 +1005,12 @@
                     border-radius: 50%;
                     margin-left: 5vw;
                     padding: 50px 0;
-                    width: 60vw;
+                    width: 50vw;
                     }
         
                 #imgforecariah:hover {
-                      transform: none;
-                      transition:none;
+                      width: 53vw;
+                      transition: all 0.5s ease;
                       border-radius: none;                
                     } 
   
@@ -957,35 +1023,33 @@
                 }
     
                 #imgouinouin:hover {
-                  transform: none;
-                  border-radius: 50%;
-                  transition: none;
-                  width: 90vw;         
+                  width: 51vw;
+                  transition: all 0.5s ease;
+                  border-radius: none;  
                 }
   
                   #partiejaune {
                     background-color: rgba(231, 193, 78, 0.199);
-                    margin: 0 0;
-                    width: 100vw;              
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
+                    width: 95vw;
                   }                
   
                   #imgvuesass {    
                     height: 40vh;
-                    width: 70vw;
+                    width: 50vw;
                     margin-left: 5vw;
                     border-radius: 50%;
                     margin-top: 5px;                
                   }
       
                   #imgvuesass:hover{
-                    transform: none;
-                    transition: none;
-                    border-radius: none;
-                    width: 70vw;            
+                  width: 55vw;
+                  transition: all 0.5s ease;
+                  border-radius: none;          
                   }
+
                   #coop {
                     display: flex;
                     justify-content: center;
@@ -996,18 +1060,16 @@
   
                   #imgmaires{                             
                     height: 40vh;
-                    width: 70vw;
+                    width: 50vw;
                     border-radius: 50%;
                     margin-top: 5px;
                     margin-left: 5vw;
                   }
       
                   #imgmaires:hover{
-                    transform: none;
-                    border-radius: 50%;
-                    transition: none;
-                    border-radius: none;
-                    width: 70vw;
+                    width: 55vw;
+                    transition: all 0.5s ease;
+                    border-radius: none; 
                   }
                   
                   #perspetive {
@@ -1021,47 +1083,36 @@
   
                   #imgacteur {      
                     height: 40vh;
-                    width: 70vw;
+                    width: 50vw;
                     border-radius: 50%;
                     margin-top: 5px;
                     margin-left: 5vw;
                   }      
                   
                   #imgacteur:hover{
-                    transform: none;
-                    border-radius: 50%;
-                    transition: none;
-                    border-radius: none;
-                    width: 70vw;
-                  }
-  
-                  #partierouge {
-                    background-color: rgba(234, 46, 33, 0.199);
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content:center;
-                    margin: 0 0;
+                    width: 55vw;
+                    transition: all 0.5s ease;
+                    border-radius: none; 
                   }
 
-                  #partierouge #action-acc h2 {
-                    width: 130px;
-                    }
+                  #partierouge {
+                    width: 95vw;
+                  }                
   
                   #partiegrise {
-                    background-color: rgba(230, 230, 230, 0.39);
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    margin: 0 0;
-                    width: 100%;
+                    width: 95vw;
                   }
+                  
                   #gallery {             
                     display: grid;                   
-                    grid-template-columns: repeat(10,10vw);      
-                    grid-template-rows: repeat(49, 10vh);                  
-                    gap: 5px; 
-                    margin-left: 0px;
-                    margin-right: 0px;
+                    grid-template-columns: repeat(auto-fit, minmax(auto-fit, 1fr));    
+                    grid-template-rows: repeat(49, 70px);
+                    box-sizing: border-box;                
+                    gap: 5px;
+                    width: 90vw;
                   }
   
                   #gallery .galleryitems {
@@ -1135,11 +1186,11 @@
                   /*Photo pont*/
                   #G12 {
                     grid-area: 58 / 1 / 60 / 11 ;
-                  }           
+                  }  
 
               }
 /*---------------------------------------------------------------------------------------------------------------------------*/
-              @media screen and (max-width: 744px) {              
+              @media screen and (max-width: 850px) {              
 
               header{
                 height: 105px;
@@ -1152,6 +1203,14 @@
                 margin-right: auto;
                }
 
+               #logocontainer {
+                margin-left: auto;
+               }
+
+               #pong {
+                margin-right: auto;                         
+              }
+
                .btn {
                 border: 1.5px solid #1e6f43ff;
               }
@@ -1160,26 +1219,72 @@
                 border: 1.5px solid white;
               }
 
-              #imgevenement {
-                height: 70vh;
-                width: 60vw;
+              #partieverte img{                             
+                width: 50vw;
+                border-radius: 50%;
+                margin-top: 5px;
+                margin-left: 5vw;
+              }
+  
+              #imgmaires:hover{
+                width: 55vw;
+                transition: all 0.5s ease;
+                border-radius: none; 
               }
 
               #imgevenement:hover {
                 transform: none;
                 transition: none;
               }
+              
 
-              #contact img {
-                height: 6%;
-                width: 11%;
+              #action-acc, #action-venir {
+                flex: 1 1 100%; /* Full width on small screens */
+            }
+
+            #gallery {             
+              display: grid;  
+              grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */                
+              gap: 5px;
+              margin: 0 auto;
+              box-sizing: border-box;
+              width: 96vw;
+              margin-bottom: 90px; 
+            }
+
+            #gallery .galleryitems {
+              border: 1px solid rgb(71, 70, 70);
+              width: 99%;
+              height: 100%;
+              box-shadow: none;
+              margin: 25px auto;                                                                         
               }
 
+              #gallery .galleryitems:hover {
+                transition: none;
+                box-shadow:none;
+                border: none;
+               }
+
+              #gallery .galleryitems p {
+                font-size: 12px;
+                padding: 0;
+               } 
+               
+               #gallery .galleryitems p{
+                transition: none;
+                box-shadow: none ;
+                border: none;
+               }  
+
+            #partiegrise {
+              margin: 0 auto;
+            }
               }
 
  /*--------------------------------------------------------------------------------------------------------------------------*/
 
-            @media screen and (max-width: 450px) {
+            @media screen and (max-width: 462px) {
 
               body {               
                 font-size: 15px;                
@@ -1190,8 +1295,14 @@
                 border-bottom: 1px solid #1e6f43ff;               
               }
 
+              nav ul li {
+                margin: 2px;
+              }
+
               .btn {
                 border: 1px solid #1e6f43ff;
+                margin: 0;
+                padding: 0px;
               }
               
               .btn:hover {
@@ -1217,10 +1328,6 @@
                 margin-right: auto;
                }
 
-              nav ul li {            
-                margin-right: 12px;
-                font-size: 14px;
-              }
 
               #pong {
                 display: flex;
@@ -1251,10 +1358,6 @@
                 padding-left: 2.5px;
               }
 
-              #imgevenement {
-                height: 70vh;
-                width: 90vw;
-              }
 
               #imgevenement:hover {
                   transform: none;
@@ -1262,12 +1365,12 @@
                 }
 
               #partieverte {
-                  margin: 0 0;
                   background-color: rgba(110, 247, 128, 0.199);
                   display: flex;
                   flex-wrap: wrap;
                   justify-content: center;
                   width: 100vw;
+                  margin: auto;
                 }
 
                 #qui {
@@ -1348,14 +1451,14 @@
 
                 #partiejaune {
                   background-color: rgba(231, 193, 78, 0.199);
-                  margin: 0 0;
+                  margin: auto;
                   width: 100vw;              
                   display: flex;
                   flex-wrap: wrap;
                   justify-content: center;
                 }
                 
-                #sass {
+                #sass {margin: 0 auto;
                 width: 100vw;
                 text-align: center;
                 justify-content: center;
@@ -1379,7 +1482,7 @@
                 #coop {
                 display: flex;
                 flex-wrap: wrap;
-                width: 100vw;
+                width: 100vw;margin: 0 auto;
                 text-align: center;
                 justify-content: center;
 
@@ -1436,44 +1539,19 @@
                   display: flex;
                   flex-wrap: wrap;
                   justify-content:center;
-                  margin: 0 0;
+                  text-align: center;
+                  width: 100vw;
+                  margin-right: 0;                  
                 }
 
                 #partiegrise {
-                  background-color: rgba(230, 230, 230, 0.39);
-                  display: flex;
-                  flex-wrap: wrap;
-                  justify-content: center;
-                  margin: 0 0;
-                  width: 100%;
+                  margin: 0 auto;
                 }
 
                 #contact img {
-                  height: 6%;
-                  width: 11%;
-                }
-
-                #gallery {             
-                  display: grid;  
-                  grid-template-columns: repeat(10,10vw);      
-                  grid-template-rows: repeat(49, 10vh);                  
-                  gap: 5px; 
-                  margin-left: 0px;
-                  margin-right: 0px;
-                }
-
-                #gallery .galleryitems {
-                  width: 100%;
-                  height: 100%;
-                  border: 2px solid rgb(71, 70, 70);
-                  box-shadow:3px 3px 6px grey ;                                                                            
-                  }
-
-                  #gallery .galleryitems:hover {
-                    transition: none;
-                    box-shadow:10px 10px 15px grey ;
-                    border: 4px solid grey;
-                   }   
+                  height: 4%;
+                  width: 9%;
+                }  
 
                 /* Photo cooperation*/
                 #G1 {
@@ -1534,7 +1612,20 @@
                 #G12 {
                   grid-area: 48 / 1 / 50 / 10 ;
                 }
-              }
+
+                @media screen and (max-width: 450px) {
+                  
+
+                  nav ul li {
+                    font-size: 12px;
+                    margin: 1px;
+                  }
+
+                  #gallery {
+                    width: 96vw;
+                  }
+                }
+              
               
               .js-scroll {
                 opacity: 0;
@@ -1609,5 +1700,25 @@
                 transform: scale(1.03);
                 transition: 1s ease-in-out; 
               }
+
+              ------------
+
+              .progress-container {
+                width: 100%;
+                background: #f3f3f3;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 10px;
+                z-index: 1000;
+            }
+            
+            .progress-bar {
+                height: 10px;
+                background: #4caf50;
+                width: 0;
+            }
+
+          }
               
               

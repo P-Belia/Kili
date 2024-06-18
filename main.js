@@ -1,3 +1,5 @@
+// Scroll animation
+
 const scrollElements = document.querySelectorAll(".js-scroll");
 
 const elementInView = (el, dividend = 1) => {
@@ -95,6 +97,27 @@ window.addEventListener("scroll", () => {
 });
 
 
+//Bar de progression
+
+document.getElementsByClassName('scrollDiv').addEventListener('scroll', function() {
+            const scrollDiv = this;
+            const scrollButton = document.getElementById('btn');
+            const scrollTop = scrollDiv.scrollTop;
+            const scrollHeight = scrollDiv.scrollHeight - scrollDiv.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+            scrollButton.style.backgroundSize = scrollPercent + '% 100%';
+        });
+/*
+document.getElementById('scrollDiv').addEventListener('scroll', function() {
+  const scrollDiv = this;
+  const progressBar = document.getElementsByClassName ('btn');
+  const scrollTop = scrollDiv.scrollTop;
+  const scrollHeight = scrollDiv.scrollHeight - scrollDiv.clientHeight;
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  progressBar.style.width = scrollPercent + '%'; 
+});*/
 
 
 /* const scrollElements = document.querySelectorAll(".js-scroll");
@@ -155,3 +178,18 @@ window.addEventListener("load", () => {
     imgevenement.style.animation = "none";
   }, 3000);
 });*/
+
+//formulaire de contactc
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  var errorMessage = document.getElementById('error-message');
+  var emailInput = document.querySelector('input[type="email"]');
+  var emailValue = emailInput.value.trim();
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(emailValue)) {
+    event.preventDefault();
+    errorMessage.textContent = 'Veuillez fournir une adresse e-mail valide.';
+    emailInput.focus();
+  }
+});
