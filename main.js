@@ -32,24 +32,24 @@ const handleScrollAnimation = () => {
     if (elementInView(el, 1.25)) {
       displayScrollElement(el);
     } else if (elementOutofView(el)) {
-      hideScrollElement(el)
+      hideScrollElement(el);
     }
-  })
-}
+  });
+};
 
-window.addEventListener("scroll", () => { 
+window.addEventListener("scroll", () => {
   handleScrollAnimation();
 });
 
 // Home page imgevenement effect
 
-window.addEventListener('load', function() {
-  var image = document.getElementById('imgevenement');
-  
+window.addEventListener("load", function () {
+  var image = document.getElementById("imgevenement");
+
   // Retirer la classe pour le zoom in après 3 secondes
-  setTimeout(function() {
-    image.classList.remove('zoom-in');
-    image.classList.add('zoom-out');
+  setTimeout(function () {
+    image.classList.remove("zoom-in");
+    image.classList.add("zoom-out");
   }, 1000);
 });
 
@@ -87,27 +87,28 @@ const handleScrollAnimation2 = () => {
     if (elementInView2(el, 1.35)) {
       displayScrollElement2(el);
     } else if (elementOutofView2(el)) {
-      hideScrollElement2(el)
+      hideScrollElement2(el);
     }
-  })
-}
+  });
+};
 
-window.addEventListener("scroll", () => { 
+window.addEventListener("scroll", () => {
   handleScrollAnimation2();
 });
 
-
 //Bar de progression
 
-document.getElementsByClassName('scrollDiv').addEventListener('scroll', function() {
-            const scrollDiv = this;
-            const scrollButton = document.getElementById('btn');
-            const scrollTop = scrollDiv.scrollTop;
-            const scrollHeight = scrollDiv.scrollHeight - scrollDiv.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
+document
+  .getElementsByClassName("scrollDiv")
+  .addEventListener("scroll", function () {
+    const scrollDiv = this;
+    const scrollButton = document.getElementById("btn");
+    const scrollTop = scrollDiv.scrollTop;
+    const scrollHeight = scrollDiv.scrollHeight - scrollDiv.clientHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
 
-            scrollButton.style.backgroundSize = scrollPercent + '% 100%';
-        });
+    scrollButton.style.backgroundSize = scrollPercent + "% 100%";
+  });
 /*
 document.getElementById('scrollDiv').addEventListener('scroll', function() {
   const scrollDiv = this;
@@ -118,7 +119,6 @@ document.getElementById('scrollDiv').addEventListener('scroll', function() {
 
   progressBar.style.width = scrollPercent + '%'; 
 });*/
-
 
 /* const scrollElements = document.querySelectorAll(".js-scroll");
 
@@ -173,6 +173,19 @@ window.addEventListener("load", () => {
   imgevenement.style.animation = "zoom 3s infinite alternate";
 
   document.body.appendChild(imgevenement);
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "htmlWhitespaceSensitivity": "css"
+
+  }
+
 
   setTimeout(() => {
     imgevenement.style.animation = "none";
@@ -180,16 +193,41 @@ window.addEventListener("load", () => {
 });*/
 
 //formulaire de contactc
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    var errorMessage = document.getElementById("error-message");
+    var emailInput = document.querySelector('input[type="email"]');
+    var emailValue = emailInput.value.trim();
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  var errorMessage = document.getElementById('error-message');
-  var emailInput = document.querySelector('input[type="email"]');
-  var emailValue = emailInput.value.trim();
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailValue)) {
+      event.preventDefault();
+      errorMessage.textContent = "Veuillez fournir une adresse e-mail valide.";
+      emailInput.focus();
+    }
+  });
 
-  if (!emailRegex.test(emailValue)) {
+  //Gestion des donnees formulaire
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    errorMessage.textContent = 'Veuillez fournir une adresse e-mail valide.';
-    emailInput.focus();
-  }
+
+    let formData = new FormData(this);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/send-email', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            alert('Email envoyé avec succès!');
+        } else {
+            alert('Erreur lors de l\'envoi de l\'email.');
+        }
+    };
+
+    let json = {};
+    formData.forEach((value, key) => { json[key] = value });
+    xhr.send(JSON.stringify(json));
 });
+

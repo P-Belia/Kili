@@ -13,7 +13,9 @@ app.post('/send-email', (req, res) => {
     const { nom, prenom, entreprise, email, telephone, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-        service: 'outlook', // ou 'gmail', 'yahoo', etc.
+        host: 'smtp.office365.com',
+        port: 587,
+        secure: false, // true pour les connexions SSL
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
@@ -38,3 +40,4 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
     console.log(`Serveur démarré sur le port ${port}`);
 });
+
