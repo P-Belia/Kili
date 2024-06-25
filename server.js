@@ -23,7 +23,7 @@ app.post('/send-email', (req, res) => {
     });
 
     const mailOptions = {
-        from: email,
+        from: EMAIL_USER,
         to: process.env.EMAIL_USER,
         subject: 'Nouveau message du formulaire de contact',
         text: `Nom: ${nom}\nPrénom: ${prenom}\nEntreprise: ${entreprise}\nEmail: ${email}\nTéléphone: ${telephone}\nMessage: ${message}`

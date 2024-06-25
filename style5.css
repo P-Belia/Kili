@@ -1607,6 +1607,33 @@ textarea::placeholder {
     }
   }
 
+  @media screen and (max-width: 362px) {
+    nav ul li {
+      font-size: 10px;
+      margin: 1px;
+    }
+
+    #logo {
+      display: flex;
+      height: 40px;
+      width: 65px;
+      margin-top: 5px;
+    }
+
+    #pong {
+      display: flex;
+    }
+
+    #pong p {
+      display: flex;
+      font-size: 12px;
+    }
+
+
+  }
+
+
+
   .js-scroll {
     opacity: 0;
     transition: opacity 500ms;
