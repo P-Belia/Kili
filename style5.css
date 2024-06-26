@@ -594,7 +594,7 @@ textarea::placeholder {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  width: 96vw; /* Ensure it takes full width */
+  width: 100vw; /* Ensure it takes full width */
 }
 
 #basdepage {
@@ -1352,12 +1352,15 @@ textarea::placeholder {
     transition: none;
   }
 
-  #partieverte {
-    background-color: rgba(110, 247, 128, 0.199);
+  #partieverte, #partiejaune, #partierouge {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100vw;
+    width: 99vw;
+  }
+
+  #partieverte {
+    background-color: rgba(110, 247, 128, 0.199);
     margin: auto;
   }
 
@@ -1439,10 +1442,6 @@ textarea::placeholder {
   #partiejaune {
     background-color: rgba(231, 193, 78, 0.199);
     margin: auto;
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   #sass {
@@ -1522,13 +1521,8 @@ textarea::placeholder {
   }
 
   #partierouge {
-    background-color: rgba(234, 46, 33, 0.199);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: rgba(234, 46, 33, 0.199);    
     text-align: center;
-    width: 100vw;
-    margin-right: 0;
   }
 
   #partiegrise {
