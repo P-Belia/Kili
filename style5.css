@@ -1600,6 +1600,15 @@ textarea::placeholder {
     grid-area: 48 / 1 / 50 / 10;
   }
 
+  .form-block {
+    min-width: 362px;
+  }
+  
+  .contact-info {
+    min-width: 362px;
+  }
+}
+
   @media screen and (max-width: 450px) {
     nav ul li {
       font-size: 12px;
@@ -1628,8 +1637,6 @@ textarea::placeholder {
       display: flex;
       font-size: 12px;
     }
-
-
   }
 
 
@@ -1723,4 +1730,4 @@ textarea::placeholder {
     background: #4caf50;
     width: 0;
   }
-}
+
