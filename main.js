@@ -97,7 +97,7 @@ window.addEventListener("scroll", () => {
 });
 
 //Bar de progression
-
+/*
 document
   .getElementsByClassName("scrollDiv")
   .addEventListener("scroll", function () {
@@ -108,7 +108,7 @@ document
     const scrollPercent = (scrollTop / scrollHeight) * 100;
 
     scrollButton.style.backgroundSize = scrollPercent + "% 100%";
-  });
+  });*/
 /*
 document.getElementById('scrollDiv').addEventListener('scroll', function() {
   const scrollDiv = this;
@@ -192,7 +192,8 @@ window.addEventListener("load", () => {
   }, 3000);
 });*/
 
-//formulaire de contactc
+//formulaire de contact
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
@@ -205,29 +206,27 @@ document
       event.preventDefault();
       errorMessage.textContent = "Veuillez fournir une adresse e-mail valide.";
       emailInput.focus();
+    } else {
+      event.preventDefault();
+
+      let formData = new FormData(this);
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/send-email", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          alert("Email envoyé avec succès!");
+        } else {
+          alert("Erreur lors de l'envoi de l'email.");
+        }
+      };
+
+      let json = {};
+      formData.forEach((value, key) => {
+        json[key] = value;
+      });
+      xhr.send(JSON.stringify(json));
     }
   });
-
-  //Gestion des donnees formulaire
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    let formData = new FormData(this);
-
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/send-email', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            alert('Email envoyé avec succès!');
-        } else {
-            alert('Erreur lors de l\'envoi de l\'email.');
-        }
-    };
-
-    let json = {};
-    formData.forEach((value, key) => { json[key] = value });
-    xhr.send(JSON.stringify(json));
-});
-

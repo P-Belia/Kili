@@ -1352,7 +1352,9 @@ textarea::placeholder {
     transition: none;
   }
 
-  #partieverte, #partiejaune, #partierouge {
+  #partieverte,
+  #partiejaune,
+  #partierouge {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1521,7 +1523,7 @@ textarea::placeholder {
   }
 
   #partierouge {
-    background-color: rgba(234, 46, 33, 0.199);    
+    background-color: rgba(234, 46, 33, 0.199);
     text-align: center;
   }
 
@@ -1597,131 +1599,128 @@ textarea::placeholder {
   .form-block {
     min-width: 362px;
   }
-  
+
   .contact-info {
     min-width: 362px;
   }
 }
 
-  @media screen and (max-width: 450px) {
-    nav ul li {
-      font-size: 12px;
-      margin: 1px;
-    }
+@media screen and (max-width: 450px) {
+  nav ul li {
+    font-size: 12px;
+    margin: 1px;
+  }
+}
+
+@media screen and (max-width: 362px) {
+  nav ul li {
+    font-size: 10px;
+    margin: 1px;
   }
 
-  @media screen and (max-width: 362px) {
-    nav ul li {
-      font-size: 10px;
-      margin: 1px;
-    }
-
-    #logo {
-      display: flex;
-      height: 40px;
-      width: 65px;
-      margin-top: 5px;
-    }
-
-    #pong {
-      display: flex;
-    }
-
-    #pong p {
-      display: flex;
-      font-size: 12px;
-    }
+  #logo {
+    display: flex;
+    height: 40px;
+    width: 65px;
+    margin-top: 5px;
   }
 
+  #pong {
+    display: flex;
+  }
 
+  #pong p {
+    display: flex;
+    font-size: 12px;
+  }
+}
 
-  .js-scroll {
+.js-scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
     opacity: 0;
-    transition: opacity 500ms;
   }
-
-  .js-scroll.scrolled {
+  100% {
+    transform: translateY(0);
     opacity: 1;
   }
-  .scrolled.fade-in-bottom {
-    animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1);
   }
-
-  @keyframes fade-in-bottom {
-    0% {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  50% {
+    transform: scale(1.2);
   }
-
-  @keyframes zoom-in {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    75% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-    }
+  75% {
+    transform: scale(1);
   }
-
-  @keyframes zoom-out {
-    0% {
-      transform: scale(1.2);
-    }
-    50% {
-      transform: scale(1);
-    }
-    75% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
+  100% {
+    transform: scale(1.2);
   }
+}
 
-  .frame {
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+@keyframes zoom-out {
+  0% {
+    transform: scale(1.2);
   }
-
-  .zoom-in {
-    animation-name: zoom-in;
+  50% {
+    transform: scale(1);
   }
-
-  .zoom-out {
-    animation-name: zoom-out;
+  75% {
+    transform: scale(1.2);
   }
-
-  /* zoom in for Diaporama */
-
-  .zoom-in2 {
-    transform: scale(1.03);
-    transition: 1s ease-in-out;
+  100% {
+    transform: scale(1);
   }
+}
 
-  ------------ .progress-container {
-    width: 100%;
-    background: #f3f3f3;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 10px;
-    z-index: 1000;
-  }
+.frame {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
-  .progress-bar {
-    height: 10px;
-    background: #4caf50;
-    width: 0;
-  }
+.zoom-in {
+  animation-name: zoom-in;
+}
 
+.zoom-out {
+  animation-name: zoom-out;
+}
+
+/* zoom in for Diaporama */
+
+.zoom-in2 {
+  transform: scale(1.03);
+  transition: 1s ease-in-out;
+}
+
+------------ .progress-container {
+  width: 100%;
+  background: #f3f3f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10px;
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #4caf50;
+  width: 0;
+}
